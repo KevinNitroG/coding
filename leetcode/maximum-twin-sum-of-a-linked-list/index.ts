@@ -10,41 +10,40 @@ class ListNode {
 }
 
 function pairSum(head: ListNode | null): number {
-  let afterMiddle = findAfterMiddle(head);
-  afterMiddle = reverse(afterMiddle!);
+  if (!head) return 0;
+
+  // 1. Find the middle of the linked list
+  let slow: ListNode | null = head;
+  let fast: ListNode | null = head;
+
+  while (fast && fast.next) {
+    slow = slow.next!;
+    fast = fast.next.next;
+  }
+
+  // 2. Reverse the second half in-place
+  let prev: ListNode | null = null;
+  let curr: ListNode | null = slow;
+
+  while (curr) {
+    const nextNode: ListNode | null = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = nextNode;
+  }
+
+  // 3. Track max twin sums moving simultaneously
   let max = 0;
-  while (afterMiddle) {
-    const sum = head!.val + afterMiddle.val;
-    if (sum > max) {
-      max = sum;
-    }
-    head = head!.next;
-    afterMiddle = afterMiddle.next;
+  let firstHalf: ListNode | null = head;
+  let secondHalf: ListNode | null = prev; // 'prev' is the head of reversed half
+
+  while (secondHalf) {
+    max = Math.max(max, firstHalf!.val + secondHalf.val);
+    firstHalf = firstHalf!.next;
+    secondHalf = secondHalf.next;
   }
+
   return max;
-}
-
-function findAfterMiddle(head: ListNode | null): ListNode | null {
-  let firstPtr = head;
-  let secPtr = head?.next;
-  while (secPtr?.next) {
-    firstPtr = firstPtr!.next;
-    secPtr = secPtr.next!.next;
-  }
-  return firstPtr!.next;
-}
-
-function reverse(head: ListNode): ListNode {
-  let first = head;
-  let sec = head.next;
-  first.next = null;
-  while (sec) {
-    const temp = sec;
-    sec = sec.next;
-    temp.next = first;
-    first = temp;
-  }
-  return first;
 }
 
 console.log(
