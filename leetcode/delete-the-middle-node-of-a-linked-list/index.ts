@@ -10,21 +10,17 @@ class ListNode {
 }
 
 function deleteMiddle(head: ListNode | null): ListNode | null {
+  if (head?.next === null) {
+    return null;
+  }
   const original = head;
-  let fast = head;
   let slow = head;
-  let prevSlow: ListNode | null = null;
+  let fast = head?.next?.next || null;
   while (fast && fast.next) {
-    prevSlow = slow;
     slow = slow!.next;
     fast = fast.next.next;
   }
-  if (prevSlow) {
-    prevSlow.next = slow!.next;
-  } else {
-    return null;
-  }
-  slow = null;
+  slow!.next = slow?.next?.next || null;
   return original;
 }
 
