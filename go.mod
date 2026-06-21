@@ -1,4 +1,4 @@
-module github.com/KevinNitroG/code-practices
+module github.com/KevinNitroG/coding
 
 go 1.26.3
 
