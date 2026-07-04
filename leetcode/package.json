@@ -1,0 +1,20 @@
+{
+  "name": "@kevinnitrog/coding-leetcode",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@datastructures-js/binary-search-tree": "catalog:leetcode",
+    "@datastructures-js/deque": "catalog:leetcode",
+    "@datastructures-js/graph": "catalog:leetcode",
+    "@datastructures-js/heap": "catalog:leetcode",
+    "@datastructures-js/linked-list": "catalog:leetcode",
+    "@datastructures-js/priority-queue": "catalog:leetcode",
+    "@datastructures-js/queue": "catalog:leetcode",
+    "@datastructures-js/set": "catalog:leetcode",
+    "@datastructures-js/stack": "catalog:leetcode",
+    "@datastructures-js/trie": "catalog:leetcode"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:leetcode"
+  }
+}

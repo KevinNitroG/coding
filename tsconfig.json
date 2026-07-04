@@ -1,9 +1,8 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "strict": true,
-    "noEmit": true,
-    "module": "esnext"
-  },
-  "include": ["leetcode/**/*.ts", "leetcode/**/*.js"]
+  "extends": "./tsconfig.base.json",
+  "references": [
+    {
+      "path": "./leetcode/tsconfig.json"
+    }
+  ]
 }
