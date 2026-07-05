@@ -11,5 +11,5 @@
     "target": "es2024",
     "isolatedModules": true
   },
-  "include": ["./**/*.ts"]
+  "include": ["./**/*.ts", "./**/*.js"]
 }
