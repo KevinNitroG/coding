@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
+    "composite": true,
     "strict": true,
-    "noEmit": true,
     "module": "esnext",
     "esModuleInterop": true,
     "lib": ["ES2025"],

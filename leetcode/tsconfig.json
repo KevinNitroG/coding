@@ -9,7 +9,8 @@
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "target": "es2024",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["./**/*.ts", "./**/*.js"]
 }

@@ -1,5 +1,3 @@
-import { Queue } from "@datastructures-js/queue";
-
 function minScore(n: number, roads: number[][]): number {
   type CityPath = {
     dest: number;

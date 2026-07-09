@@ -25,3 +25,5 @@ var convert = function (s, numRows) {
 
   return rows.join("");
 };
+
+export {};
