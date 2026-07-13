@@ -5,11 +5,16 @@ declare global {
   type MaxHeap<T> = import("@datastructures-js/heap").MaxHeap<T>;
   type LinkedList<T> = import("@datastructures-js/linked-list").LinkedList<T>;
   type LinkedListNode = import("@datastructures-js/linked-list").LinkedListNode;
-  type DoublyLinkedList<T> = import("@datastructures-js/linked-list").DoublyLinkedList<T>;
-  type DoublyLinkedListNode = import("@datastructures-js/linked-list").DoublyLinkedListNode;
-  type PriorityQueue<T> = import("@datastructures-js/priority-queue").PriorityQueue<T>;
-  type MinPriorityQueue<T> = import("@datastructures-js/priority-queue").MinPriorityQueue<T>;
-  type MaxPriorityQueue<T> = import("@datastructures-js/priority-queue").MaxPriorityQueue<T>;
+  type DoublyLinkedList<T> =
+    import("@datastructures-js/linked-list").DoublyLinkedList<T>;
+  type DoublyLinkedListNode =
+    import("@datastructures-js/linked-list").DoublyLinkedListNode;
+  type PriorityQueue<T> =
+    import("@datastructures-js/priority-queue").PriorityQueue<T>;
+  type MinPriorityQueue<T> =
+    import("@datastructures-js/priority-queue").MinPriorityQueue<T>;
+  type MaxPriorityQueue<T> =
+    import("@datastructures-js/priority-queue").MaxPriorityQueue<T>;
   type Queue<T> = import("@datastructures-js/queue").Queue<T>;
   type EnhancedSet<T> = import("@datastructures-js/set").EnhancedSet<T>;
   type Stack<T> = import("@datastructures-js/stack").Stack<T>;
@@ -31,13 +36,30 @@ declare global {
     val: number;
     next: ListNode | null;
   }
+
+  interface ListNodeConstructor {
+    new (val?: number, next?: ListNode | null): ListNode;
+    readonly prototype: ListNode;
+  }
+
+  var ListNode: ListNodeConstructor;
+
   interface TreeNode {
     val: number;
     left: TreeNode | null;
     right: TreeNode | null;
   }
-  function ListNode(val?: any, next?: ListNode | null): ListNode;
-  function TreeNode(val?: any, left?: TreeNode | null, right?: TreeNode | null): TreeNode;
+
+  interface TreeNodeConstructor {
+    new (
+      val?: number,
+      left?: TreeNode | null,
+      right?: TreeNode | null,
+    ): TreeNode;
+    readonly prototype: TreeNode;
+  }
+
+  var TreeNode: TreeNodeConstructor;
 }
 
 export {};
