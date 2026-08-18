@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/count-subarrays-with-majority-element-i/
+
 function countMajoritySubarrays(nums: number[], target: number): number {
   let result = 0;
 

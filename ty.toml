@@ -1,0 +1,5 @@
+[src]
+include = ["leetcode", "self"]
+
+[environment]
+python-platform = "linux"

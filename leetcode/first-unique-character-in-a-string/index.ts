@@ -15,3 +15,5 @@ function firstUniqChar(s: string): number {
 
   return -1;
 }
+
+export {};
