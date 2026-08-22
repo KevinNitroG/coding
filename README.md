@@ -5,6 +5,8 @@
 ## Algorithms
 
 - DSU (Disjoint Set Union) / Union Find
+- Can find represent graph as adjacent matrix
+  > kiểu đối xứng nhau qua trục chéo
 
 ### Leetcode
 

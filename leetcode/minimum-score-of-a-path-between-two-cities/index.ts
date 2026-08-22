@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/description
+// This is not union find :))
+
 function minScore(n: number, roads: number[][]): number {
   type CityPath = {
     dest: number;
