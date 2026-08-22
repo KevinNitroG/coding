@@ -10,7 +10,7 @@ function checkDivisibility(n: number): boolean {
     product *= digit;
     m = Math.floor(m / 10);
   }
-  return Number.isInteger(sum / n) && Number.isInteger(product / n);
+  return n % (sum + product) === 0;
 }
 
-console.log(checkDivisibility(99)); // true
+console.log(checkDivisibility(99));
